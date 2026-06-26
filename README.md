@@ -6,6 +6,9 @@
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OMCHOKSI108/UrbanGrowthAndPlanningResearch/blob/main/UrbanPulse_AI_MultiCity_Urban_Growth_Intelligence_Om_Choksi.ipynb)
 
+
+OPENFLASK APP : https://urbangrowthandplanningresearch.onrender.com
+
 ---
 
 ## Goal
