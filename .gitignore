@@ -15,7 +15,7 @@ env/
 .jupyter/
 
 # Trained model artifacts (large binary files)
-urbanpulse_models/
+
 
 # OS files
 .DS_Store
