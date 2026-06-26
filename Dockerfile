@@ -6,7 +6,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
-COPY app/templates/ app/templates/
+COPY app/templates/ templates/
 COPY urbanpulse_outputs/ urbanpulse_outputs/
 
 EXPOSE 5000
