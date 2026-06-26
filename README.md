@@ -11,6 +11,13 @@ OPENFLASK APP : https://urbangrowthandplanningresearch.onrender.com
 
 ---
 
+## Interactive Dashboard
+
+A **Flask + Folium** dashboard is included for visualizing results on an interactive Gujarat map.
+
+![Dashboard Home Page](https://raw.githubusercontent.com/OMCHOKSI108/UrbanGrowthAndPlanningResearch/main/docs/image.png)
+
+---
 ## Goal
 
 Build a fully automated pipeline that monitors urban expansion, forecasts future growth, and produces deployable geospatial intelligence — all from free satellite imagery.
@@ -93,13 +100,7 @@ Build a fully automated pipeline that monitors urban expansion, forecasts future
 | **Sprawl Clusters** | ![Sprawl Clusters](https://raw.githubusercontent.com/OMCHOKSI108/UrbanGrowthAndPlanningResearch/main/urbanpulse_outputs/Ahmedabad_sprawl_clusters_plot.png) |
 | **GHSL Validation Confusion Matrix** | ![GHSL Validation](https://raw.githubusercontent.com/OMCHOKSI108/UrbanGrowthAndPlanningResearch/main/urbanpulse_outputs/Ahmedabad_ghsl_validation_confusion_matrix.png) |
 
----
 
-## Interactive Dashboard
-
-A **Flask + Folium** dashboard is included for visualizing results on an interactive Gujarat map.
-
-![Dashboard Home Page](https://raw.githubusercontent.com/OMCHOKSI108/UrbanGrowthAndPlanningResearch/main/docs/image.png)
 
 ### API Endpoints
 
