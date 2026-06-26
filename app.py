@@ -116,7 +116,15 @@ def predictions():
 def clusters():
     clusters_data = load_json(os.path.join(API_DIR, f"{CITY}_sprawl_clusters.json"))
     summary = load_json(os.path.join(API_DIR, f"{CITY}_summary.json"))
-    return render_template("clusters.html", clusters=clusters_data, summary=summary)
+    chart_labels = [f"{c['label']} ({c['count']})" for c in clusters_data]
+    chart_data = [c["count"] for c in clusters_data]
+    return render_template(
+        "clusters.html",
+        clusters=clusters_data,
+        summary=summary,
+        chart_labels=chart_labels,
+        chart_data=chart_data,
+    )
 
 
 @app.route("/metrics")

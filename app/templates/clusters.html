@@ -87,19 +87,23 @@
 
 {% block scripts %}
 <script>
-new Chart(document.getElementById('clusterPie'), {
-    type: 'doughnut',
-    data: {
-        labels: [{% for c in clusters %}{{ '"' + c.label + ' (' + c.count|string + ')"' + (',' if not loop.last else '') }}{% endfor %}],
-        datasets: [{
-            data: [{% for c in clusters %}{{ c.count }}{{ ',' if not loop.last }}{% endfor %}],
-            backgroundColor: ['#e74c3c','#2ecc71','#f39c12','#3498db'],
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: { legend: { position: 'bottom' } }
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    var ctx = document.getElementById('clusterPie');
+    if (!ctx) return;
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: {{ chart_labels | tojson }},
+            datasets: [{
+                data: {{ chart_data | tojson }},
+                backgroundColor: ['#e74c3c', '#2ecc71', '#f39c12', '#3498db'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom' } }
+        }
+    });
 });
 </script>
 {% endblock %}
