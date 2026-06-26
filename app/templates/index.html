@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ summary.builtup_2017_sqkm }}</div>
+            <div class="label">km² Built-Up 2017</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ summary.builtup_2025_sqkm }}</div>
+            <div class="label">km² Built-Up 2025</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ summary.predicted_2030_sqkm }}</div>
+            <div class="label">km² Predicted 2030</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number" style="color:{% if summary.sprawl_risk_score < 25 %}#198754{% elif summary.sprawl_risk_score < 50 %}#ffc107{% else %}#dc3545{% endif %}">
+                {{ summary.sprawl_risk_score }}
+            </div>
+            <div class="label">Sprawl Risk Score</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-geo-alt me-2"></i>{{ summary.city }} Study Area — Gujarat</h5>
+            <div class="map-container">{{ map_html|safe }}</div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card p-3 mb-3">
+            <h5 class="mb-3"><i class="bi bi-info-circle me-2"></i>City Summary</h5>
+            <table class="table table-sm">
+                <tr><td>Description</td><td>{{ summary.city_description }}</td></tr>
+                <tr><td>Historical Range</td><td>{{ summary.historical_start_year }}–{{ summary.historical_end_year }}</td></tr>
+                <tr><td>Prediction End</td><td>{{ summary.prediction_end_year }}</td></tr>
+                <tr><td>CAGR</td><td>{{ summary.cagr_percent }}%</td></tr>
+                <tr><td>Total Expansion</td><td>{{ summary.total_expansion_2017_2025_sqkm }} km²</td></tr>
+                <tr><td>Best Model</td><td>{{ summary.model_selected }}</td></tr>
+                <tr><td>Validation</td><td>{{ summary.validation_status }}</td></tr>
+            </table>
+        </div>
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-diagram-3 me-2"></i>Clusters Found</h5>
+            {% for c in summary.clusters_found %}
+            <span class="badge bg-secondary me-1 mb-1">{{ c }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ historical.get('2017', '—') }}</div>
+            <div class="label">km² Historical 2017</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ historical.get('2025', '—') }}</div>
+            <div class="label">km² Historical 2025</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ yearly[-1].avg_km2 if yearly else '—' }}</div>
+            <div class="label">km² Predicted {{ yearly[-1].year if yearly else '' }}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="number">{{ quarterly|length }}</div>
+            <div class="label">Quarterly Predictions</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-graph-up me-2"></i>Quarterly Predictions 2026–2030</h5>
+            <canvas id="predChart" height="280"></canvas>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-table me-2"></i>Yearly Average</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover">
+                    <thead><tr><th>Year</th><th class="text-end">km²</th></tr></thead>
+                    <tbody>
+                        {% for y in yearly %}
+                        <tr><td>{{ y.year }}</td><td class="text-end">{{ y.avg_km2 }}</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4 p-3">
+    <h5 class="mb-3"><i class="bi bi-list me-2"></i>All Quarterly Predictions</h5>
+    <div class="table-responsive" style="max-height:400px;overflow-y:auto">
+        <table class="table table-sm table-hover">
+            <thead><tr><th>Quarter</th><th class="text-end">Predicted Area (km²)</th></tr></thead>
+            <tbody>
+                {% for r in quarterly %}
+                <tr><td>{{ r.Year }} Q{{ r.Quarter }}</td><td class="text-end">{{ r.Predicted_Area_sqkm }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+new Chart(document.getElementById('predChart'), {
+    type: 'bar',
+    data: {
+        labels: {{ labels|safe }},
+        datasets: [{
+            label: 'Predicted Built-Up (km²)',
+            data: {{ values|safe }},
+            backgroundColor: 'rgba(13,110,253,0.6)',
+            borderColor: 'rgba(13,110,253,1)',
+            borderWidth: 1,
+            borderRadius: 4,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: { beginAtZero: true, title: { display: true, text: 'km²' } },
+            x: { ticks: { maxRotation: 45 } }
+        }
+    }
+});
+</script>
+{% endblock %}

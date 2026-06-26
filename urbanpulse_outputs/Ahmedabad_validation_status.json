@@ -1,0 +1,8 @@
+{
+  "ghsl_validation_performed": true,
+  "city": "Ahmedabad",
+  "validation_year": 2020,
+  "accuracy": 0.734647460197119,
+  "f1_score": 0.33078393881453155,
+  "kappa": 0.1922198337895853
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "cluster_id": 0,
+    "label": "Existing Dense Urban",
+    "count": 1070,
+    "ndbi_mean": 0.1034,
+    "ndvi_mean": -0.1437,
+    "ndwi_mean": 0.3165,
+    "water_occurrence_mean": 48.74
+  },
+  {
+    "cluster_id": 1,
+    "label": "Stable Non-Urban / Low Growth",
+    "count": 887,
+    "ndbi_mean": -0.1782,
+    "ndvi_mean": 0.5146,
+    "ndwi_mean": -0.4841,
+    "water_occurrence_mean": 9.11
+  },
+  {
+    "cluster_id": 2,
+    "label": "New Expansion / Edge Growth",
+    "count": 2196,
+    "ndbi_mean": 0.0748,
+    "ndvi_mean": 0.1719,
+    "ndwi_mean": -0.2727,
+    "water_occurrence_mean": 8.34
+  },
+  {
+    "cluster_id": 3,
+    "label": "Existing Dense Urban",
+    "count": 1847,
+    "ndbi_mean": 0.0451,
+    "ndvi_mean": 0.1118,
+    "ndwi_mean": -0.0628,
+    "water_occurrence_mean": 15.69
+  }
+]

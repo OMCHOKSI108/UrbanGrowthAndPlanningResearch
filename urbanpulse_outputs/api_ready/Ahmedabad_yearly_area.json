@@ -1,0 +1,56 @@
+[
+  {
+    "Year": 2017,
+    "BuiltUp_Area_sqkm": 0.264,
+    "Growth_sqkm": 0.0,
+    "Growth_Rate_Percent": 0.0
+  },
+  {
+    "Year": 2018,
+    "BuiltUp_Area_sqkm": 0.354,
+    "Growth_sqkm": 0.08999999999999997,
+    "Growth_Rate_Percent": 34.09090909090908
+  },
+  {
+    "Year": 2019,
+    "BuiltUp_Area_sqkm": 0.673,
+    "Growth_sqkm": 0.31900000000000006,
+    "Growth_Rate_Percent": 90.1129943502825
+  },
+  {
+    "Year": 2020,
+    "BuiltUp_Area_sqkm": 0.244,
+    "Growth_sqkm": -0.42900000000000005,
+    "Growth_Rate_Percent": -63.74442793462109
+  },
+  {
+    "Year": 2021,
+    "BuiltUp_Area_sqkm": 0.274,
+    "Growth_sqkm": 0.030000000000000027,
+    "Growth_Rate_Percent": 12.295081967213118
+  },
+  {
+    "Year": 2022,
+    "BuiltUp_Area_sqkm": 0.403,
+    "Growth_sqkm": 0.129,
+    "Growth_Rate_Percent": 47.080291970802925
+  },
+  {
+    "Year": 2023,
+    "BuiltUp_Area_sqkm": 0.395,
+    "Growth_sqkm": -0.008000000000000007,
+    "Growth_Rate_Percent": -1.985111662531014
+  },
+  {
+    "Year": 2024,
+    "BuiltUp_Area_sqkm": 0.316,
+    "Growth_sqkm": -0.07900000000000001,
+    "Growth_Rate_Percent": -20.000000000000007
+  },
+  {
+    "Year": 2025,
+    "BuiltUp_Area_sqkm": 0.318,
+    "Growth_sqkm": 0.0020000000000000018,
+    "Growth_Rate_Percent": 0.6329113924050667
+  }
+]

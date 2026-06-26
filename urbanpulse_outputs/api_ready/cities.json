@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Ahmedabad",
+    "bbox": [
+      72.45,
+      22.9,
+      72.7,
+      23.15
+    ],
+    "center": [
+      23.025,
+      72.575
+    ],
+    "description": "Major city in Gujarat, fast-growing western urban center"
+  },
+  {
+    "name": "Surat",
+    "bbox": [
+      72.75,
+      21.1,
+      72.95,
+      21.3
+    ],
+    "center": [
+      21.2,
+      72.85
+    ],
+    "description": "Diamond and textile hub, high population growth"
+  },
+  {
+    "name": "Bengaluru",
+    "bbox": [
+      77.45,
+      12.85,
+      77.75,
+      13.1
+    ],
+    "center": [
+      12.975,
+      77.6
+    ],
+    "description": "IT capital, rapid peripheral expansion"
+  },
+  {
+    "name": "Hyderabad",
+    "bbox": [
+      78.35,
+      17.3,
+      78.6,
+      17.55
+    ],
+    "center": [
+      17.425,
+      78.475
+    ],
+    "description": "Pharma and tech hub, significant urban sprawl"
+  },
+  {
+    "name": "Pune",
+    "bbox": [
+      73.75,
+      18.45,
+      73.95,
+      18.65
+    ],
+    "center": [
+      18.55,
+      73.85
+    ],
+    "description": "Educational and industrial center, growing rapidly"
+  }
+]

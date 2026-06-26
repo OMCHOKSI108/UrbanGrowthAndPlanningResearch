@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-4 mb-4">
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-diagram-3 me-2"></i>Sprawl Cluster Summary</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th>Cluster</th>
+                            <th>Label</th>
+                            <th class="text-end">Pixels</th>
+                            <th class="text-end">NDBI</th>
+                            <th class="text-end">NDVI</th>
+                            <th class="text-end">Water %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set colors = ['#e74c3c','#2ecc71','#f39c12','#3498db'] %}
+                        {% for c in clusters %}
+                        <tr>
+                            <td><span class="cluster-badge" style="background:{{ colors[c.cluster_id % 4] }}"></span>{{ c.cluster_id }}</td>
+                            <td>{{ c.label }}</td>
+                            <td class="text-end">{{ c.count }}</td>
+                            <td class="text-end">{{ '%.3f'|format(c.ndbi_mean) }}</td>
+                            <td class="text-end">{{ '%.3f'|format(c.ndvi_mean) }}</td>
+                            <td class="text-end">{{ '%.1f'|format(c.water_occurrence_mean) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-pie-chart me-2"></i>Cluster Distribution</h5>
+            <canvas id="clusterPie" height="280"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="card p-3">
+    <h5 class="mb-3"><i class="bi bi-info-circle me-2"></i>Cluster Interpretation</h5>
+    <div class="row">
+        {% for c in clusters %}
+        <div class="col-md-6 mb-3">
+            <div class="p-3 rounded border" style="border-left:4px solid {{ ['#e74c3c','#2ecc71','#f39c12','#3498db'][c.cluster_id % 4] }}">
+                <h6>{{ c.label }} <small class="text-muted">(Cluster {{ c.cluster_id }})</small></h6>
+                <small>
+                    <strong>NDBI:</strong> {{ '%.3f'|format(c.ndbi_mean) }} |
+                    <strong>NDVI:</strong> {{ '%.3f'|format(c.ndvi_mean) }} |
+                    <strong>NDWI:</strong> {{ '%.3f'|format(c.ndwi_mean) }} |
+                    <strong>Water Occ:</strong> {{ '%.1f'|format(c.water_occurrence_mean) }}%
+                    <br>
+                    <strong>Samples:</strong> {{ c.count }} pixels
+                    {% if c.cluster_id == 0 or c.cluster_id == 3 %}
+                    — High NDBI, low NDVI: <em>dense built-up</em>
+                    {% elif c.cluster_id == 1 %}
+                    — High NDVI, negative NDWI: <em>vegetation / agriculture</em>
+                    {% elif c.cluster_id == 2 %}
+                    — Moderate NDBI + NDVI: <em>recent expansion / edge growth</em>
+                    {% endif %}
+                </small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-image me-2"></i>Sprawl Clusters Plot</h5>
+            <img src="/outputs/{{ summary.city }}_sprawl_clusters_plot.png" class="img-fluid rounded" alt="Sprawl Clusters">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-image me-2"></i>Feature Importance</h5>
+            <img src="/outputs/{{ summary.city }}_feature_importance.png" class="img-fluid rounded" alt="Feature Importance">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+new Chart(document.getElementById('clusterPie'), {
+    type: 'doughnut',
+    data: {
+        labels: [{% for c in clusters %}{{ '"' + c.label + ' (' + c.count|string + ')"' + (',' if not loop.last else '') }}{% endfor %}],
+        datasets: [{
+            data: [{% for c in clusters %}{{ c.count }}{{ ',' if not loop.last }}{% endfor %}],
+            backgroundColor: ['#e74c3c','#2ecc71','#f39c12','#3498db'],
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+    }
+});
+</script>
+{% endblock %}

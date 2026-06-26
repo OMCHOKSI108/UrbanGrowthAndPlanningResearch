@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-bar-chart me-2"></i>Classification Performance</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr><th>Metric</th><th class="text-end">Random Forest</th><th class="text-end">XGBoost</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for m in ['Accuracy','Precision','Recall','F1','Kappa','ROC_AUC'] %}
+                        <tr>
+                            <td>{{ m }}</td>
+                            {% for c in metrics.classification %}
+                            <td class="text-end">{{ '%.4f'|format(c[m]) }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card p-3 mt-3">
+            <h5 class="mb-3"><i class="bi bi-award me-2"></i>Best Model</h5>
+            <p><strong>Classifier:</strong> {{ metrics.selection.best_classifier }}</p>
+            <p><strong>Forecast:</strong> {{ metrics.selection.best_forecast }}</p>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-graph-up me-2"></i>Forecast Performance</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr><th>Metric</th><th class="text-end">Linear Reg</th><th class="text-end">XGBoost</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for m in ['RMSE','MAE','MAPE','R2'] %}
+                        <tr>
+                            <td>{{ m }}</td>
+                            {% for f in metrics.forecast %}
+                            <td class="text-end">{{ '%.4f'|format(f[m]) }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card p-3 mt-3">
+            <h5 class="mb-3"><i class="bi bi-check-circle me-2"></i>GHSL Validation</h5>
+            <div class="table-responsive">
+                <table class="table table-sm table-hover">
+                    <thead><tr><th>Metric</th><th class="text-end">Value</th></tr></thead>
+                    <tbody>
+                        {% for v in metrics.ghsl_validation %}
+                        <tr><td>{{ v.Metric }}</td><td class="text-end">{{ '%.4f'|format(v.Value) }}</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4 g-4">
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-image me-2"></i>Confusion Matrix</h5>
+            <img src="/outputs/Ahmedabad_confusion_matrix.png" class="img-fluid rounded" alt="Confusion Matrix">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5 class="mb-3"><i class="bi bi-image me-2"></i>Forecast Plot</h5>
+            <img src="/outputs/Ahmedabad_forecast_plot.png" class="img-fluid rounded" alt="Forecast Plot">
+        </div>
+    </div>
+</div>
+{% endblock %}

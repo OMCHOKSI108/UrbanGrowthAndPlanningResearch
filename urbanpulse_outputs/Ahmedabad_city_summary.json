@@ -1,0 +1,29 @@
+{
+  "city": "Ahmedabad",
+  "city_description": "Major city in Gujarat, fast-growing western urban center",
+  "bbox": [
+    72.45,
+    22.9,
+    72.7,
+    23.15
+  ],
+  "historical_start_year": 2017,
+  "historical_end_year": 2025,
+  "prediction_end_year": 2030,
+  "builtup_2017_sqkm": 0.264,
+  "builtup_2025_sqkm": 0.318,
+  "predicted_2030_sqkm": 0.337,
+  "historical_growth_percent": 5.4,
+  "predicted_growth_percent": 1.92,
+  "total_expansion_2017_2025_sqkm": 0.054,
+  "cagr_percent": 2.35,
+  "sprawl_risk_score": 7.06,
+  "model_selected": "Random Forest",
+  "validation_status": "GHSL validated",
+  "clusters_found": [
+    "Existing Dense Urban",
+    "Stable Non-Urban / Low Growth",
+    "New Expansion / Edge Growth",
+    "Existing Dense Urban"
+  ]
+}

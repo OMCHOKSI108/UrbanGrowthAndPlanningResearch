@@ -1,0 +1,64 @@
+{
+  "classification": [
+    {
+      "Model": "Random Forest",
+      "Accuracy": 1.0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0,
+      "Kappa": 1.0,
+      "ROC_AUC": 1.0
+    },
+    {
+      "Model": "XGBoost",
+      "Accuracy": 0.9976666666666667,
+      "Precision": 0.996343085106383,
+      "Recall": 0.999,
+      "F1": 0.9976697736351531,
+      "Kappa": 0.9953333333333333,
+      "ROC_AUC": 0.9999873333333333
+    }
+  ],
+  "forecast": [
+    {
+      "Model": "LR",
+      "RMSE": 9.269801310099655e-16,
+      "MAE": 8.146261443187087e-16,
+      "MAPE": 3.6408645919680033e-13,
+      "R2": 1.0
+    },
+    {
+      "Model": "XGBoost",
+      "RMSE": 0.04074248529348458,
+      "MAE": 0.031768514561653145,
+      "MAPE": 16.839063377882486,
+      "R2": 0.952032063544694
+    }
+  ],
+  "selection": {
+    "best_classifier": "Random Forest",
+    "best_forecast": "Linear Regression"
+  },
+  "ghsl_validation": [
+    {
+      "Metric": "Accuracy",
+      "Value": 0.734647460197119
+    },
+    {
+      "Metric": "Precision",
+      "Value": 0.5226586102719033
+    },
+    {
+      "Metric": "Recall",
+      "Value": 0.24195804195804196
+    },
+    {
+      "Metric": "F1-Score",
+      "Value": 0.33078393881453155
+    },
+    {
+      "Metric": "Kappa",
+      "Value": 0.1922198337895853
+    }
+  ]
+}

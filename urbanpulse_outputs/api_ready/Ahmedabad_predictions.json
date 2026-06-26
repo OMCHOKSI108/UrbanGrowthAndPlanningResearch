@@ -1,0 +1,122 @@
+[
+  {
+    "Time_Index": 36,
+    "Year": 2026,
+    "Quarter": 1,
+    "Predicted_Area_sqkm": 0.2889
+  },
+  {
+    "Time_Index": 37,
+    "Year": 2026,
+    "Quarter": 2,
+    "Predicted_Area_sqkm": 0.4473
+  },
+  {
+    "Time_Index": 38,
+    "Year": 2026,
+    "Quarter": 3,
+    "Predicted_Area_sqkm": 0.3702
+  },
+  {
+    "Time_Index": 39,
+    "Year": 2026,
+    "Quarter": 4,
+    "Predicted_Area_sqkm": 0.277
+  },
+  {
+    "Time_Index": 40,
+    "Year": 2027,
+    "Quarter": 1,
+    "Predicted_Area_sqkm": 0.3157
+  },
+  {
+    "Time_Index": 41,
+    "Year": 2027,
+    "Quarter": 2,
+    "Predicted_Area_sqkm": 0.4212
+  },
+  {
+    "Time_Index": 42,
+    "Year": 2027,
+    "Quarter": 3,
+    "Predicted_Area_sqkm": 0.3389
+  },
+  {
+    "Time_Index": 43,
+    "Year": 2027,
+    "Quarter": 4,
+    "Predicted_Area_sqkm": 0.2774
+  },
+  {
+    "Time_Index": 44,
+    "Year": 2028,
+    "Quarter": 1,
+    "Predicted_Area_sqkm": 0.3157
+  },
+  {
+    "Time_Index": 45,
+    "Year": 2028,
+    "Quarter": 2,
+    "Predicted_Area_sqkm": 0.4212
+  },
+  {
+    "Time_Index": 46,
+    "Year": 2028,
+    "Quarter": 3,
+    "Predicted_Area_sqkm": 0.3347
+  },
+  {
+    "Time_Index": 47,
+    "Year": 2028,
+    "Quarter": 4,
+    "Predicted_Area_sqkm": 0.2774
+  },
+  {
+    "Time_Index": 48,
+    "Year": 2029,
+    "Quarter": 1,
+    "Predicted_Area_sqkm": 0.3157
+  },
+  {
+    "Time_Index": 49,
+    "Year": 2029,
+    "Quarter": 2,
+    "Predicted_Area_sqkm": 0.4212
+  },
+  {
+    "Time_Index": 50,
+    "Year": 2029,
+    "Quarter": 3,
+    "Predicted_Area_sqkm": 0.3347
+  },
+  {
+    "Time_Index": 51,
+    "Year": 2029,
+    "Quarter": 4,
+    "Predicted_Area_sqkm": 0.2774
+  },
+  {
+    "Time_Index": 52,
+    "Year": 2030,
+    "Quarter": 1,
+    "Predicted_Area_sqkm": 0.3157
+  },
+  {
+    "Time_Index": 53,
+    "Year": 2030,
+    "Quarter": 2,
+    "Predicted_Area_sqkm": 0.4212
+  },
+  {
+    "Time_Index": 54,
+    "Year": 2030,
+    "Quarter": 3,
+    "Predicted_Area_sqkm": 0.3347
+  },
+  {
+    "Time_Index": 55,
+    "Year": 2030,
+    "Quarter": 4,
+    "Predicted_Area_sqkm": 0.2774
+  }
+]

@@ -14,8 +14,7 @@ env/
 .ipynb_checkpoints/
 .jupyter/
 
-# Notebook outputs / generated data
-urbanpulse_outputs/
+# Trained model artifacts (large binary files)
 urbanpulse_models/
 
 # OS files
