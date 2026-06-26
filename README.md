@@ -99,6 +99,8 @@ Build a fully automated pipeline that monitors urban expansion, forecasts future
 
 A **Flask + Folium** dashboard is included for visualizing results on an interactive Gujarat map.
 
+![Dashboard Home Page](https://raw.githubusercontent.com/OMCHOKSI108/UrbanGrowthAndPlanningResearch/main/docs/image.png)
+
 ### API Endpoints
 
 | Endpoint | Description |
