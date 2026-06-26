@@ -68,27 +68,31 @@
 
 {% block scripts %}
 <script>
-new Chart(document.getElementById('predChart'), {
-    type: 'bar',
-    data: {
-        labels: {{ labels|safe }},
-        datasets: [{
-            label: 'Predicted Built-Up (km²)',
-            data: {{ values|safe }},
-            backgroundColor: 'rgba(13,110,253,0.6)',
-            borderColor: 'rgba(13,110,253,1)',
-            borderWidth: 1,
-            borderRadius: 4,
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: {
-            y: { beginAtZero: true, title: { display: true, text: 'km²' } },
-            x: { ticks: { maxRotation: 45 } }
+document.addEventListener('DOMContentLoaded', function () {
+    var ctx = document.getElementById('predChart');
+    if (!ctx) return;
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ labels|safe }},
+            datasets: [{
+                label: 'Predicted Built-Up (km²)',
+                data: {{ values|safe }},
+                backgroundColor: 'rgba(13,110,253,0.6)',
+                borderColor: 'rgba(13,110,253,1)',
+                borderWidth: 1,
+                borderRadius: 4,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, title: { display: true, text: 'km²' } },
+                x: { ticks: { maxRotation: 45 } }
+            }
         }
-    }
+    });
 });
 </script>
 {% endblock %}
